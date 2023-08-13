@@ -1,0 +1,18 @@
+version: '3'
+services:
+  web-nasa-images:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      # image: diegobrasil/curl-requester:1.0
+    ports:
+      - "8000:5000"
+    volumes:
+      - .:/src
+    stop_signal: SIGINT
+  #   depends_on: 
+  #     - redis
+  # redis:
+  #   image: redislabs/redismod
+  #   ports:
+  #     - '6379:6379'
