@@ -1,9 +1,12 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/jQuery.min.js') }}"></script>
 	<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/generic.js') }}"></script>
 	{% block scripts %}{% endblock %}
 
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" type="text/css"/>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/geral.css') }}" type="text/css">
 
 	<title>{% block title %}{% endblock %}</title>
 	<div class="content">
