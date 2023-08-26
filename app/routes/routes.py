@@ -21,21 +21,20 @@ def images_data():
     #return f"<h3>{data}</h3>"
 
 
-@bp_data.route("/api-data", methods=['GET'])
+@bp_data.route("/api-data", methods=['GET', 'POST'])
 def request_api():
 
-    url = URL + API_KEY + "&date=1996-04-17"
+    search_date =  request.form.get('inDate')
 
-    search_date = {'data': request.form.get('inDate')}
+    url = URL + API_KEY + "&date=" + search_date
     
     response = requests.get(url)
 
     if response.status_code == 200:
         data = response.json()
-        dados = data
-        # return redirect(url_for('images_data', data=data))
-        return render_template("images_view.html", **data, dados=dados)
-        # return data
+
+        return render_template("images_view.html", **data)
+
 
     else:
         data = {"status": "NOK"}

@@ -55,9 +55,9 @@ function getDateDois() {
     $('#expInfo').html(html).load(
         "/api-data",
         // Para isso funcionar, deve apontar para uma rota de POST
-        //{
-        //    inDate:inDate
-        //},
+        {
+           inDate:inDate
+        },
         function(){
             console.log("load was performed");
         });
